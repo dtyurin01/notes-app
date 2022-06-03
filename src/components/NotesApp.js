@@ -1,12 +1,13 @@
 import React from "react";
 import BlockNote from "./BlockNote";
+import ControlPanel from "./ControlPanel";
 
-function NotesApp({createNewNote, data}) {
+function NotesApp({createNewNote, data, deleteNote, notesLength, deleteAll}) {
     return(
         <div className="noteBlock">
-            <BlockNote createNewNote={createNewNote} data={data}/>
+            <BlockNote createNewNote={createNewNote} data={data} deleteNote={deleteNote} notesLength={notesLength} deleteAll={deleteAll}/>
             <div className="main">
-                <div className="controlPanel">Control Panel</div>
+                <ControlPanel/>
                 
                 <div className="Content">Content here</div>
             </div>

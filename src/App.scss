@@ -21,9 +21,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   //background:  linear-gradient(to bottom, white 0%, pink 100%);
 }
-.container-center{
-  
-}
 /* NoNotes */
 .noNotes{
     display: flex;
@@ -155,19 +152,17 @@ button.style-5 {
   display: inline-block;
   padding-left: 5px;
   overflow: scroll;
+  overflow-x:hidden;
+  width: 200px;
 }
-  .controlPanel{
-  border-bottom: 2px solid black;
-}
-.blockExample{
-  width: 190px;
-}
+
+
 .icon{
   margin-left: 2px;
   border: 2px solid black;
 }
 .icons{
-  display: flex;
+  margin-left: 5px;
 }
 .createNewNote{
   display: flex;
@@ -178,4 +173,47 @@ button.style-5 {
   margin-left:3px;
   height: 17px;
   width: 17px;
+}
+.btn-delete{
+  border: 2px solid black;
+  margin-left:3px;
+  height: 17px;
+  width: 17px;
+
+}
+// Control Panel 
+
+.controlPanel{
+  border-bottom: 2px solid black;
+  height: auto;
+  width: 100%;
+}
+.changeMode{
+  margin:10px;
+}
+.mode{
+  text-decoration: none;
+  position: relative;
+  margin-left: 5px;
+  padding: 5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.mode::before {
+  content: '';
+  background-color: hsla(196, 61%, 58%, .75);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+.mode:hover::before {
+  bottom: 0;
+  height: 100%;
+  color: #fff;
+
 }
